@@ -1,5 +1,5 @@
 # EasyAT-TLS
-Python programs to make it eaiser to create AT-TLS definition on z/OS - and to display the information
+Python programs to make it easier to create AT-TLS definition on z/OS - and to display the information
 
 The official way of defining AT-TLS configuration requires the person to know a lot about the internal structure
 of AT-TLS, and how configuration information is stored.
@@ -166,8 +166,10 @@ ServerCertificateLabel : RSA2048
 
 This can be simplified by using "BasedOn" to refer to other sections, such as the "common" rule
 
----
+
 # This first section is common to the others
+
+```
 policyRule : common
 TLSv1.1 : Off
 TLSv1.2 : On
