@@ -1,0 +1,2295 @@
+
+TCP/IP pasearch CS 3.1                    Image Name: TCPIP                    
+  Date:                 12/23/2024        Time:  04:52:29 
+  TTLS Instance Id:     1734951139
+
+policyRule:             AZFClientRule                                  
+  Rule Type:            TTLS                                           
+  Version:              3                 Status:            Active          
+  Weight:               255               ForLoadDist:       False 
+  Priority:             255               Sequence Actions:  Don't Care  
+  No. Policy Action:    3
+  policyAction:         eActAZFClient                                  
+   ActionType:          TTLS Environment
+   Action Sequence:     0               
+  policyAction:         AZFGroupAction1                                
+   ActionType:          TTLS Group      
+   Action Sequence:     0               
+  policyAction:         AZFConnAction1                                 
+   ActionType:          TTLS Connection 
+   Action Sequence:     0               
+  Time Periods:
+   Day of Month Mask:
+   First to Last:       1111111111111111111111111111111
+   Last to First:       1111111111111111111111111111111
+   Month of Yr Mask:    111111111111    
+   Day of Week Mask:    1111111  (Sunday - Saturday)
+   Start Date Time:     None            
+   End Date Time:       None            
+   Fr TimeOfDay:        00:00             To TimeOfDay:      24:00           
+   Fr TimeOfDay UTC:    00:00             To TimeOfDay UTC:  00:00           
+   TimeZone:            Local           
+  TTLS Condition Summary:                 NegativeIndicator: Off
+   Local Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   Remote Address:
+    FromAddr:           0.0.26.137                                    
+    ToAddr:             0.0.26.137                                    
+   LocalPortFrom:       0                 LocalPortTo:       0     
+   RemotePortFrom:      0                 RemotePortTo:      0     
+   JobName:             AZF*              UserId:                            
+   ServiceDirection:    Outbound        
+  Policy created: Mon Dec 23 04:52:19 2024
+  Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  eActAZFClient                                  
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Environment
+    HandshakeRole:              Client         
+    Trace:                      255             
+    SuiteBProfile:              Off            
+    TTLSKeyringParms:
+     Keyring:                   start1/TN3270
+    TTLSEnvironmentAdvancedParms:
+     SSLv2:                     Off            
+     SSLv3:                     Off            
+     TLSv1:                     Off            
+     TLSv1.1:                   Off            
+     TLSv1.2:                   On             
+     TLSv1.3:                   Off            
+     MiddleBoxCompatMode:       Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          10              
+     ClientAuthType:            Required       
+     ResetCipherTimer:          0               
+     TruncatedHMAC:             Off            
+     CertValidationMode:        Any            
+     ServerMaxSSLFragment:      Off            
+     ClientMaxSSLFragment:      Off            
+     ServerHandshakeSNI:        Off            
+     ClientHandshakeSNI:        Off            
+     ClientExtendedMasterSecret: On             
+     ServerExtendedMasterSecret: On             
+     Renegotiation:             Default         
+     RenegotiationIndicator:    Optional        
+     RenegotiationCertCheck:    Off            
+     3DesKeyCheck:              Off            
+     ClientEDHGroupSize:        Legacy         
+     ServerEDHGroupSize:        Legacy         
+     PeerMinCertVersion:        Any            
+     PeerMinDHKeySize:          1024            
+     PeerMinDsaKeySize:         1024            
+     PeerMinECCKeySize:         192             
+     PeerMinRsaKeySize:         1024            
+     ServerScsv:                Off            
+    TTLSSignatureParms:
+     ClientECurves:
+      0021  secp224r1
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0019  secp192r1
+     ClientKeyShareGroups:
+      0023  secp256r1
+     ServerKeyShareGroups:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0029  X25519
+      0030  X448
+     ServerKexECurves:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0021  secp224r1
+      0019  secp192r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSGskAdvancedParms:
+     GSK_V3_SESSION_TIMEOUT:                    86400
+     GSK_V3_SIDCACHE_SIZE:                      512
+     GSK_SESSION_TICKET_CLIENT_ENABLE:          On             
+     GSK_SESSION_TICKET_CLIENT_MAXSIZE:         8192
+     GSK_SESSION_TICKET_SERVER_ENABLE:          On             
+     GSK_SESSION_TICKET_SERVER_ALGORITHM:       AESCBC128
+     GSK_SESSION_TICKET_SERVER_COUNT:           2
+     GSK_SESSION_TICKET_SERVER_KEY_REFRESH:     300
+     GSK_SESSION_TICKET_SERVER_TIMEOUT:         300
+     TTLSGskHttpCdpParms:
+      HttpCdpEnable:            Off            
+      HttpCdpProxyServerPort:   80              
+      HttpCdpResponseTimeout:   15              
+      HttpCdpMaxResponseSize:   204800          
+      HttpCdpCacheSize:         32              
+      HttpCdpCacheEntryMaxsize: 0               
+     TTLSGskOcspParms:
+      OcspAiaEnable:            Off            
+      OcspProxyServerPort:      80              
+      OcspRetrieveViaGet:       Off            
+      OcspUrlPriority:          On             
+      OcspRequestSigalg:
+       0401  TLS_SIGALG_SHA256_WITH_RSA
+      OcspClientCacheSize:      256             
+      OcspCliCacheEntryMaxsize: 0               
+      OcspNonceGenEnable:       Off            
+      OcspNonceCheckEnable:     Off            
+      OcspNonceSize:            8               
+      OcspResponseTimeout:      15              
+      OcspMaxResponseSize:      20480           
+      OcspServerStapling:       Off            
+    EnvironmentUserInstance:    1               
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFGroupAction1                                
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Group
+    TTLSEnabled:                On             
+    CtraceClearText:            Off            
+    Trace:                      255
+    FIPS140:                    Off            
+    TTLSGroupAdvancedParms:      
+     SecondaryMap:              Off            
+     SyslogFacility:            Daemon         
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFConnAction1                                 
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Connection
+    CtraceClearText:            Off            
+    Trace:                      255             
+    TTLSConnectionAdvancedParms:
+     CertificateLabel:          RSA2048
+     ServerCertificateLabel:    RSA2048
+    TTLSCipherParms:
+     v3CipherSuites:
+      C023  TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+      C024  TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+      C027  TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+      C028  TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+      C02B  TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+      C02C  TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+      C02F  TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+policyRule:             AZFMutAuthRule                                 
+  Rule Type:            TTLS                                           
+  Version:              3                 Status:            Active          
+  Weight:               255               ForLoadDist:       False 
+  Priority:             255               Sequence Actions:  Don't Care  
+  No. Policy Action:    3
+  policyAction:         AZFGroupAction1                                
+   ActionType:          TTLS Group      
+   Action Sequence:     0               
+  policyAction:         AZFEnvActionMutual                             
+   ActionType:          TTLS Environment
+   Action Sequence:     0               
+  policyAction:         AZFConnActionMutual                            
+   ActionType:          TTLS Connection 
+   Action Sequence:     0               
+  Time Periods:
+   Day of Month Mask:
+   First to Last:       1111111111111111111111111111111
+   Last to First:       1111111111111111111111111111111
+   Month of Yr Mask:    111111111111    
+   Day of Week Mask:    1111111  (Sunday - Saturday)
+   Start Date Time:     None            
+   End Date Time:       None            
+   Fr TimeOfDay:        00:00             To TimeOfDay:      24:00           
+   Fr TimeOfDay UTC:    00:00             To TimeOfDay UTC:  00:00           
+   TimeZone:            Local           
+  TTLS Condition Summary:                 NegativeIndicator: Off
+   Local Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   Remote Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   LocalPortFrom:       6794              LocalPortTo:       6794  
+   RemotePortFrom:      0                 RemotePortTo:      0     
+   JobName:                               UserId:                            
+   ServiceDirection:    Inbound         
+  Policy created: Mon Dec 23 04:52:19 2024
+  Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFGroupAction1                                
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Group
+    TTLSEnabled:                On             
+    CtraceClearText:            Off            
+    Trace:                      255
+    FIPS140:                    Off            
+    TTLSGroupAdvancedParms:      
+     SecondaryMap:              Off            
+     SyslogFacility:            Daemon         
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFEnvActionMutual                             
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Environment
+    HandshakeRole:              ServerWithClientAuth
+    Trace:                      255             
+    SuiteBProfile:              Off            
+    TTLSKeyringParms:
+     Keyring:                   start1/TN3270
+    TTLSEnvironmentAdvancedParms:
+     SSLv2:                     Off            
+     SSLv3:                     Off            
+     TLSv1:                     On             
+     TLSv1.1:                   Off            
+     TLSv1.2:                   On             
+     TLSv1.3:                   Off            
+     MiddleBoxCompatMode:       Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          10              
+     ClientAuthType:            Required       
+     ResetCipherTimer:          0               
+     TruncatedHMAC:             Off            
+     CertValidationMode:        Any            
+     ServerMaxSSLFragment:      Off            
+     ClientMaxSSLFragment:      Off            
+     ServerHandshakeSNI:        Off            
+     ClientHandshakeSNI:        Off            
+     ClientExtendedMasterSecret: On             
+     ServerExtendedMasterSecret: On             
+     Renegotiation:             Default         
+     RenegotiationIndicator:    Optional        
+     RenegotiationCertCheck:    Off            
+     3DesKeyCheck:              Off            
+     ClientEDHGroupSize:        Legacy         
+     ServerEDHGroupSize:        Legacy         
+     PeerMinCertVersion:        Any            
+     PeerMinDHKeySize:          1024            
+     PeerMinDsaKeySize:         1024            
+     PeerMinECCKeySize:         192             
+     PeerMinRsaKeySize:         1024            
+     ServerScsv:                Off            
+    TTLSSignatureParms:
+     ClientECurves:
+      0021  secp224r1
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0019  secp192r1
+     ClientKeyShareGroups:
+      0023  secp256r1
+     ServerKeyShareGroups:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0029  X25519
+      0030  X448
+     ServerKexECurves:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0021  secp224r1
+      0019  secp192r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSGskAdvancedParms:
+     GSK_V3_SESSION_TIMEOUT:                    86400
+     GSK_V3_SIDCACHE_SIZE:                      512
+     GSK_SESSION_TICKET_CLIENT_ENABLE:          On             
+     GSK_SESSION_TICKET_CLIENT_MAXSIZE:         8192
+     GSK_SESSION_TICKET_SERVER_ENABLE:          On             
+     GSK_SESSION_TICKET_SERVER_ALGORITHM:       AESCBC128
+     GSK_SESSION_TICKET_SERVER_COUNT:           2
+     GSK_SESSION_TICKET_SERVER_KEY_REFRESH:     300
+     GSK_SESSION_TICKET_SERVER_TIMEOUT:         300
+     TTLSGskHttpCdpParms:
+      HttpCdpEnable:            Off            
+      HttpCdpProxyServerPort:   80              
+      HttpCdpResponseTimeout:   15              
+      HttpCdpMaxResponseSize:   204800          
+      HttpCdpCacheSize:         32              
+      HttpCdpCacheEntryMaxsize: 0               
+     TTLSGskOcspParms:
+      OcspAiaEnable:            Off            
+      OcspProxyServerPort:      80              
+      OcspRetrieveViaGet:       Off            
+      OcspUrlPriority:          On             
+      OcspRequestSigalg:
+       0401  TLS_SIGALG_SHA256_WITH_RSA
+      OcspClientCacheSize:      256             
+      OcspCliCacheEntryMaxsize: 0               
+      OcspNonceGenEnable:       Off            
+      OcspNonceCheckEnable:     Off            
+      OcspNonceSize:            8               
+      OcspResponseTimeout:      15              
+      OcspMaxResponseSize:      20480           
+      OcspServerStapling:       Off            
+    EnvironmentUserInstance:    0               
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFConnActionMutual                            
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Connection
+    CtraceClearText:            Off            
+    Trace:                      255             
+    TTLSConnectionAdvancedParms:
+     SecondaryMap:              Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          120             
+     ServerCertificateLabel:    RSA2048
+    TTLSCipherParms:
+     v3CipherSuites:
+      C023  TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+      C024  TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+      C027  TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+      C028  TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+      C02B  TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+      C02C  TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+      C02F  TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+policyRule:             AZFSrvAuthRule                                 
+  Rule Type:            TTLS                                           
+  Version:              3                 Status:            Active          
+  Weight:               255               ForLoadDist:       False 
+  Priority:             255               Sequence Actions:  Don't Care  
+  No. Policy Action:    3
+  policyAction:         AZFGroupAction1                                
+   ActionType:          TTLS Group      
+   Action Sequence:     0               
+  policyAction:         AZFEnvAction1                                  
+   ActionType:          TTLS Environment
+   Action Sequence:     0               
+  policyAction:         AZFConnAction1                                 
+   ActionType:          TTLS Connection 
+   Action Sequence:     0               
+  Time Periods:
+   Day of Month Mask:
+   First to Last:       1111111111111111111111111111111
+   Last to First:       1111111111111111111111111111111
+   Month of Yr Mask:    111111111111    
+   Day of Week Mask:    1111111  (Sunday - Saturday)
+   Start Date Time:     None            
+   End Date Time:       None            
+   Fr TimeOfDay:        00:00             To TimeOfDay:      24:00           
+   Fr TimeOfDay UTC:    00:00             To TimeOfDay UTC:  00:00           
+   TimeZone:            Local           
+  TTLS Condition Summary:                 NegativeIndicator: Off
+   Local Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   Remote Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   LocalPortFrom:       6793              LocalPortTo:       6793  
+   RemotePortFrom:      0                 RemotePortTo:      0     
+   JobName:                               UserId:                            
+   ServiceDirection:    Inbound         
+  Policy created: Mon Dec 23 04:52:19 2024
+  Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFGroupAction1                                
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Group
+    TTLSEnabled:                On             
+    CtraceClearText:            Off            
+    Trace:                      255
+    FIPS140:                    Off            
+    TTLSGroupAdvancedParms:      
+     SecondaryMap:              Off            
+     SyslogFacility:            Daemon         
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFEnvAction1                                  
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Environment
+    HandshakeRole:              Server         
+    Trace:                      255             
+    SuiteBProfile:              Off            
+    TTLSKeyringParms:
+     Keyring:                   start1/TN3270
+    TTLSEnvironmentAdvancedParms:
+     SSLv2:                     Off            
+     SSLv3:                     Off            
+     TLSv1:                     Off            
+     TLSv1.1:                   Off            
+     TLSv1.2:                   On             
+     TLSv1.3:                   Off            
+     MiddleBoxCompatMode:       Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          10              
+     ClientAuthType:            Required       
+     ResetCipherTimer:          0               
+     TruncatedHMAC:             Off            
+     CertValidationMode:        Any            
+     ServerMaxSSLFragment:      Off            
+     ClientMaxSSLFragment:      Off            
+     ServerHandshakeSNI:        Off            
+     ClientHandshakeSNI:        Off            
+     ClientExtendedMasterSecret: On             
+     ServerExtendedMasterSecret: On             
+     Renegotiation:             Default         
+     RenegotiationIndicator:    Optional        
+     RenegotiationCertCheck:    Off            
+     3DesKeyCheck:              Off            
+     ClientEDHGroupSize:        Legacy         
+     ServerEDHGroupSize:        Legacy         
+     PeerMinCertVersion:        Any            
+     PeerMinDHKeySize:          1024            
+     PeerMinDsaKeySize:         1024            
+     PeerMinECCKeySize:         192             
+     PeerMinRsaKeySize:         1024            
+     ServerScsv:                Off            
+    TTLSSignatureParms:
+     ClientECurves:
+      0021  secp224r1
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0019  secp192r1
+     ClientKeyShareGroups:
+      0023  secp256r1
+     ServerKeyShareGroups:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0029  X25519
+      0030  X448
+     ServerKexECurves:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0021  secp224r1
+      0019  secp192r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSGskAdvancedParms:
+     GSK_V3_SESSION_TIMEOUT:                    86400
+     GSK_V3_SIDCACHE_SIZE:                      512
+     GSK_SESSION_TICKET_CLIENT_ENABLE:          On             
+     GSK_SESSION_TICKET_CLIENT_MAXSIZE:         8192
+     GSK_SESSION_TICKET_SERVER_ENABLE:          On             
+     GSK_SESSION_TICKET_SERVER_ALGORITHM:       AESCBC128
+     GSK_SESSION_TICKET_SERVER_COUNT:           2
+     GSK_SESSION_TICKET_SERVER_KEY_REFRESH:     300
+     GSK_SESSION_TICKET_SERVER_TIMEOUT:         300
+     TTLSGskHttpCdpParms:
+      HttpCdpEnable:            Off            
+      HttpCdpProxyServerPort:   80              
+      HttpCdpResponseTimeout:   15              
+      HttpCdpMaxResponseSize:   204800          
+      HttpCdpCacheSize:         32              
+      HttpCdpCacheEntryMaxsize: 0               
+     TTLSGskOcspParms:
+      OcspAiaEnable:            Off            
+      OcspProxyServerPort:      80              
+      OcspRetrieveViaGet:       Off            
+      OcspUrlPriority:          On             
+      OcspRequestSigalg:
+       0401  TLS_SIGALG_SHA256_WITH_RSA
+      OcspClientCacheSize:      256             
+      OcspCliCacheEntryMaxsize: 0               
+      OcspNonceGenEnable:       Off            
+      OcspNonceCheckEnable:     Off            
+      OcspNonceSize:            8               
+      OcspResponseTimeout:      15              
+      OcspMaxResponseSize:      20480           
+      OcspServerStapling:       Off            
+    EnvironmentUserInstance:    0               
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFConnAction1                                 
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Connection
+    CtraceClearText:            Off            
+    Trace:                      255             
+    TTLSConnectionAdvancedParms:
+     CertificateLabel:          RSA2048
+     ServerCertificateLabel:    RSA2048
+    TTLSCipherParms:
+     v3CipherSuites:
+      C023  TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+      C024  TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+      C027  TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+      C028  TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+      C02B  TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+      C02C  TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+      C02F  TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+policyRule:             CPJES2IN                                       
+  Rule Type:            TTLS                                           
+  Version:              3                 Status:            Active          
+  Weight:               255               ForLoadDist:       False 
+  Priority:             255               Sequence Actions:  Don't Care  
+  No. Policy Action:    3
+  policyAction:         AZFGroupAction1                                
+   ActionType:          TTLS Group      
+   Action Sequence:     0               
+  policyAction:         AZFEnvAction1                                  
+   ActionType:          TTLS Environment
+   Action Sequence:     0               
+  policyAction:         AZFConnAction1                                 
+   ActionType:          TTLS Connection 
+   Action Sequence:     0               
+  Time Periods:
+   Day of Month Mask:
+   First to Last:       1111111111111111111111111111111
+   Last to First:       1111111111111111111111111111111
+   Month of Yr Mask:    111111111111    
+   Day of Week Mask:    1111111  (Sunday - Saturday)
+   Start Date Time:     None            
+   End Date Time:       None            
+   Fr TimeOfDay:        00:00             To TimeOfDay:      24:00           
+   Fr TimeOfDay UTC:    00:00             To TimeOfDay UTC:  00:00           
+   TimeZone:            Local           
+  TTLS Condition Summary:                 NegativeIndicator: Off
+   Local Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   Remote Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   LocalPortFrom:       2252              LocalPortTo:       2252  
+   RemotePortFrom:      0                 RemotePortTo:      0     
+   JobName:                               UserId:                            
+   ServiceDirection:    Inbound         
+  Policy created: Mon Dec 23 04:52:19 2024
+  Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFGroupAction1                                
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Group
+    TTLSEnabled:                On             
+    CtraceClearText:            Off            
+    Trace:                      255
+    FIPS140:                    Off            
+    TTLSGroupAdvancedParms:      
+     SecondaryMap:              Off            
+     SyslogFacility:            Daemon         
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFEnvAction1                                  
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Environment
+    HandshakeRole:              Server         
+    Trace:                      255             
+    SuiteBProfile:              Off            
+    TTLSKeyringParms:
+     Keyring:                   start1/TN3270
+    TTLSEnvironmentAdvancedParms:
+     SSLv2:                     Off            
+     SSLv3:                     Off            
+     TLSv1:                     Off            
+     TLSv1.1:                   Off            
+     TLSv1.2:                   On             
+     TLSv1.3:                   Off            
+     MiddleBoxCompatMode:       Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          10              
+     ClientAuthType:            Required       
+     ResetCipherTimer:          0               
+     TruncatedHMAC:             Off            
+     CertValidationMode:        Any            
+     ServerMaxSSLFragment:      Off            
+     ClientMaxSSLFragment:      Off            
+     ServerHandshakeSNI:        Off            
+     ClientHandshakeSNI:        Off            
+     ClientExtendedMasterSecret: On             
+     ServerExtendedMasterSecret: On             
+     Renegotiation:             Default         
+     RenegotiationIndicator:    Optional        
+     RenegotiationCertCheck:    Off            
+     3DesKeyCheck:              Off            
+     ClientEDHGroupSize:        Legacy         
+     ServerEDHGroupSize:        Legacy         
+     PeerMinCertVersion:        Any            
+     PeerMinDHKeySize:          1024            
+     PeerMinDsaKeySize:         1024            
+     PeerMinECCKeySize:         192             
+     PeerMinRsaKeySize:         1024            
+     ServerScsv:                Off            
+    TTLSSignatureParms:
+     ClientECurves:
+      0021  secp224r1
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0019  secp192r1
+     ClientKeyShareGroups:
+      0023  secp256r1
+     ServerKeyShareGroups:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0029  X25519
+      0030  X448
+     ServerKexECurves:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0021  secp224r1
+      0019  secp192r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSGskAdvancedParms:
+     GSK_V3_SESSION_TIMEOUT:                    86400
+     GSK_V3_SIDCACHE_SIZE:                      512
+     GSK_SESSION_TICKET_CLIENT_ENABLE:          On             
+     GSK_SESSION_TICKET_CLIENT_MAXSIZE:         8192
+     GSK_SESSION_TICKET_SERVER_ENABLE:          On             
+     GSK_SESSION_TICKET_SERVER_ALGORITHM:       AESCBC128
+     GSK_SESSION_TICKET_SERVER_COUNT:           2
+     GSK_SESSION_TICKET_SERVER_KEY_REFRESH:     300
+     GSK_SESSION_TICKET_SERVER_TIMEOUT:         300
+     TTLSGskHttpCdpParms:
+      HttpCdpEnable:            Off            
+      HttpCdpProxyServerPort:   80              
+      HttpCdpResponseTimeout:   15              
+      HttpCdpMaxResponseSize:   204800          
+      HttpCdpCacheSize:         32              
+      HttpCdpCacheEntryMaxsize: 0               
+     TTLSGskOcspParms:
+      OcspAiaEnable:            Off            
+      OcspProxyServerPort:      80              
+      OcspRetrieveViaGet:       Off            
+      OcspUrlPriority:          On             
+      OcspRequestSigalg:
+       0401  TLS_SIGALG_SHA256_WITH_RSA
+      OcspClientCacheSize:      256             
+      OcspCliCacheEntryMaxsize: 0               
+      OcspNonceGenEnable:       Off            
+      OcspNonceCheckEnable:     Off            
+      OcspNonceSize:            8               
+      OcspResponseTimeout:      15              
+      OcspMaxResponseSize:      20480           
+      OcspServerStapling:       Off            
+    EnvironmentUserInstance:    0               
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFConnAction1                                 
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Connection
+    CtraceClearText:            Off            
+    Trace:                      255             
+    TTLSConnectionAdvancedParms:
+     CertificateLabel:          RSA2048
+     ServerCertificateLabel:    RSA2048
+    TTLSCipherParms:
+     v3CipherSuites:
+      C023  TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+      C024  TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+      C027  TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+      C028  TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+      C02B  TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+      C02C  TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+      C02F  TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+policyRule:             CPJES2OUT                                      
+  Rule Type:            TTLS                                           
+  Version:              3                 Status:            Active          
+  Weight:               255               ForLoadDist:       False 
+  Priority:             255               Sequence Actions:  Don't Care  
+  No. Policy Action:    3
+  policyAction:         AZFGroupAction1                                
+   ActionType:          TTLS Group      
+   Action Sequence:     0               
+  policyAction:         AZFEnvAction1Client                            
+   ActionType:          TTLS Environment
+   Action Sequence:     0               
+  policyAction:         AZFConnAction1                                 
+   ActionType:          TTLS Connection 
+   Action Sequence:     0               
+  Time Periods:
+   Day of Month Mask:
+   First to Last:       1111111111111111111111111111111
+   Last to First:       1111111111111111111111111111111
+   Month of Yr Mask:    111111111111    
+   Day of Week Mask:    1111111  (Sunday - Saturday)
+   Start Date Time:     None            
+   End Date Time:       None            
+   Fr TimeOfDay:        00:00             To TimeOfDay:      24:00           
+   Fr TimeOfDay UTC:    00:00             To TimeOfDay UTC:  00:00           
+   TimeZone:            Local           
+  TTLS Condition Summary:                 NegativeIndicator: Off
+   Local Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   Remote Address:
+    FromAddr:           10.1.0.2                                      
+    ToAddr:             10.1.0.2                                      
+   LocalPortFrom:       0                 LocalPortTo:       0     
+   RemotePortFrom:      2175              RemotePortTo:      2175  
+   JobName:                               UserId:                            
+   ServiceDirection:    Outbound        
+  Policy created: Mon Dec 23 04:52:19 2024
+  Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFGroupAction1                                
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Group
+    TTLSEnabled:                On             
+    CtraceClearText:            Off            
+    Trace:                      255
+    FIPS140:                    Off            
+    TTLSGroupAdvancedParms:      
+     SecondaryMap:              Off            
+     SyslogFacility:            Daemon         
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFEnvAction1Client                            
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Environment
+    HandshakeRole:              Client         
+    Trace:                      255             
+    SuiteBProfile:              Off            
+    TTLSKeyringParms:
+     Keyring:                   start1/TN3270
+    TTLSEnvironmentAdvancedParms:
+     SSLv2:                     Off            
+     SSLv3:                     Off            
+     TLSv1:                     On             
+     TLSv1.1:                   Off            
+     TLSv1.2:                   On             
+     TLSv1.3:                   Off            
+     MiddleBoxCompatMode:       Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          10              
+     ClientAuthType:            Required       
+     ResetCipherTimer:          0               
+     TruncatedHMAC:             Off            
+     CertValidationMode:        Any            
+     ServerMaxSSLFragment:      Off            
+     ClientMaxSSLFragment:      Off            
+     ServerHandshakeSNI:        Off            
+     ClientHandshakeSNI:        Off            
+     ClientExtendedMasterSecret: On             
+     ServerExtendedMasterSecret: On             
+     Renegotiation:             Default         
+     RenegotiationIndicator:    Optional        
+     RenegotiationCertCheck:    Off            
+     3DesKeyCheck:              Off            
+     ClientEDHGroupSize:        Legacy         
+     ServerEDHGroupSize:        Legacy         
+     PeerMinCertVersion:        Any            
+     PeerMinDHKeySize:          1024            
+     PeerMinDsaKeySize:         1024            
+     PeerMinECCKeySize:         192             
+     PeerMinRsaKeySize:         1024            
+     ServerScsv:                Off            
+    TTLSSignatureParms:
+     ClientECurves:
+      0021  secp224r1
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0019  secp192r1
+     ClientKeyShareGroups:
+      0023  secp256r1
+     ServerKeyShareGroups:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0029  X25519
+      0030  X448
+     ServerKexECurves:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0021  secp224r1
+      0019  secp192r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSGskAdvancedParms:
+     GSK_V3_SESSION_TIMEOUT:                    86400
+     GSK_V3_SIDCACHE_SIZE:                      512
+     GSK_SESSION_TICKET_CLIENT_ENABLE:          On             
+     GSK_SESSION_TICKET_CLIENT_MAXSIZE:         8192
+     GSK_SESSION_TICKET_SERVER_ENABLE:          On             
+     GSK_SESSION_TICKET_SERVER_ALGORITHM:       AESCBC128
+     GSK_SESSION_TICKET_SERVER_COUNT:           2
+     GSK_SESSION_TICKET_SERVER_KEY_REFRESH:     300
+     GSK_SESSION_TICKET_SERVER_TIMEOUT:         300
+     TTLSGskHttpCdpParms:
+      HttpCdpEnable:            Off            
+      HttpCdpProxyServerPort:   80              
+      HttpCdpResponseTimeout:   15              
+      HttpCdpMaxResponseSize:   204800          
+      HttpCdpCacheSize:         32              
+      HttpCdpCacheEntryMaxsize: 0               
+     TTLSGskOcspParms:
+      OcspAiaEnable:            Off            
+      OcspProxyServerPort:      80              
+      OcspRetrieveViaGet:       Off            
+      OcspUrlPriority:          On             
+      OcspRequestSigalg:
+       0401  TLS_SIGALG_SHA256_WITH_RSA
+      OcspClientCacheSize:      256             
+      OcspCliCacheEntryMaxsize: 0               
+      OcspNonceGenEnable:       Off            
+      OcspNonceCheckEnable:     Off            
+      OcspNonceSize:            8               
+      OcspResponseTimeout:      15              
+      OcspMaxResponseSize:      20480           
+      OcspServerStapling:       Off            
+    EnvironmentUserInstance:    0               
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  AZFConnAction1                                 
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Connection
+    CtraceClearText:            Off            
+    Trace:                      255             
+    TTLSConnectionAdvancedParms:
+     CertificateLabel:          RSA2048
+     ServerCertificateLabel:    RSA2048
+    TTLSCipherParms:
+     v3CipherSuites:
+      C023  TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+      C024  TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+      C027  TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+      C028  TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+      C02B  TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+      C02C  TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+      C02F  TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+
+policyRule:             COLATTLJ                                       
+  Rule Type:            TTLS                                           
+  Version:              3                 Status:            Active          
+  Weight:               1                 ForLoadDist:       False 
+  Priority:             1                 Sequence Actions:  Don't Care  
+  No. Policy Action:    3
+  policyAction:         TNGA                                           
+   ActionType:          TTLS Group      
+   Action Sequence:     0               
+  policyAction:         TNEA                                           
+   ActionType:          TTLS Environment
+   Action Sequence:     0               
+  policyAction:         TNCA                                           
+   ActionType:          TTLS Connection 
+   Action Sequence:     0               
+  Time Periods:
+   Day of Month Mask:
+   First to Last:       1111111111111111111111111111111
+   Last to First:       1111111111111111111111111111111
+   Month of Yr Mask:    111111111111    
+   Day of Week Mask:    1111111  (Sunday - Saturday)
+   Start Date Time:     None            
+   End Date Time:       None            
+   Fr TimeOfDay:        00:00             To TimeOfDay:      24:00           
+   Fr TimeOfDay UTC:    00:00             To TimeOfDay UTC:  00:00           
+   TimeZone:            Local           
+  TTLS Condition Summary:                 NegativeIndicator: Off
+   Local Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   Remote Address:
+    FromAddr:           10.1.1.2                                      
+    ToAddr:             10.1.1.2                                      
+   LocalPortFrom:       4000              LocalPortTo:       4000  
+   RemotePortFrom:      0                 RemotePortTo:      0     
+   JobName:             COLCOMPI          UserId:            COLIN           
+   ServiceDirection:    Both            
+  Policy created: Mon Dec 23 04:52:19 2024
+  Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  TNGA                                           
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Group
+    TTLSEnabled:                On             
+    CtraceClearText:            Off            
+    Trace:                      255
+    FIPS140:                    Off            
+    TTLSGroupAdvancedParms:      
+     SecondaryMap:              Off            
+     SyslogFacility:            Daemon         
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  TNEA                                           
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Environment
+    HandshakeRole:              ServerWithClientAuth
+    Trace:                      255             
+    SuiteBProfile:              Off            
+    TTLSKeyringParms:
+     Keyring:                   start1/TN3270
+    TTLSEnvironmentAdvancedParms:
+     SSLv2:                     Off            
+     SSLv3:                     Off            
+     TLSv1:                     On             
+     TLSv1.1:                   On             
+     TLSv1.2:                   Off            
+     TLSv1.3:                   Off            
+     MiddleBoxCompatMode:       Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          10              
+     ClientAuthType:            Required       
+     ResetCipherTimer:          0               
+     TruncatedHMAC:             Off            
+     CertValidationMode:        Any            
+     ServerMaxSSLFragment:      Off            
+     ClientMaxSSLFragment:      Off            
+     ServerHandshakeSNI:        Off            
+     ClientHandshakeSNI:        Off            
+     ClientExtendedMasterSecret: On             
+     ServerExtendedMasterSecret: On             
+     Renegotiation:             Default         
+     RenegotiationIndicator:    Optional        
+     RenegotiationCertCheck:    Off            
+     3DesKeyCheck:              Off            
+     ClientEDHGroupSize:        Legacy         
+     ServerEDHGroupSize:        Legacy         
+     PeerMinCertVersion:        Any            
+     PeerMinDHKeySize:          1024            
+     PeerMinDsaKeySize:         1024            
+     PeerMinECCKeySize:         192             
+     PeerMinRsaKeySize:         1024            
+     ServerScsv:                Off            
+    TTLSSignatureParms:
+     ClientECurves:              Any            
+     ServerKeyShareGroups:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0029  X25519
+      0030  X448
+     ServerKexECurves:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0021  secp224r1
+      0019  secp192r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSGskAdvancedParms:
+     GSK_V3_SESSION_TIMEOUT:                    86400
+     GSK_V3_SIDCACHE_SIZE:                      512
+     GSK_SESSION_TICKET_CLIENT_ENABLE:          On             
+     GSK_SESSION_TICKET_CLIENT_MAXSIZE:         8192
+     GSK_SESSION_TICKET_SERVER_ENABLE:          On             
+     GSK_SESSION_TICKET_SERVER_ALGORITHM:       AESCBC128
+     GSK_SESSION_TICKET_SERVER_COUNT:           2
+     GSK_SESSION_TICKET_SERVER_KEY_REFRESH:     300
+     GSK_SESSION_TICKET_SERVER_TIMEOUT:         300
+     TTLSGskHttpCdpParms:
+      HttpCdpEnable:            Off            
+      HttpCdpProxyServerPort:   80              
+      HttpCdpResponseTimeout:   15              
+      HttpCdpMaxResponseSize:   204800          
+      HttpCdpCacheSize:         32              
+      HttpCdpCacheEntryMaxsize: 0               
+     TTLSGskOcspParms:
+      OcspAiaEnable:            Off            
+      OcspProxyServerPort:      80              
+      OcspRetrieveViaGet:       Off            
+      OcspUrlPriority:          On             
+      OcspRequestSigalg:
+       0401  TLS_SIGALG_SHA256_WITH_RSA
+      OcspClientCacheSize:      256             
+      OcspCliCacheEntryMaxsize: 0               
+      OcspNonceGenEnable:       Off            
+      OcspNonceCheckEnable:     Off            
+      OcspNonceSize:            8               
+      OcspResponseTimeout:      15              
+      OcspMaxResponseSize:      20480           
+      OcspServerStapling:       Off            
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  TNCA                                           
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Connection
+    CtraceClearText:            Off            
+    Trace:                      255             
+    TTLSConnectionAdvancedParms:
+     SecondaryMap:              Off            
+     SSLv3:                     Off            
+     TLSv1:                     Off            
+     TLSv1.1:                   Off            
+     TLSv1.2:                   On             
+     TLSv1.3:                   Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          3               
+     ServerCertificateLabel:    NISTECCTEST
+    TTLSSignatureParms:
+     ClientECurves:              Any            
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSCipherParms:
+     v3CipherSuites:
+      003D  TLS_RSA_WITH_AES_256_CBC_SHA256
+      C02C  TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+policyRule:             COLATTLS                                       
+  Rule Type:            TTLS                                           
+  Version:              3                 Status:            Active          
+  Weight:               1                 ForLoadDist:       False 
+  Priority:             1                 Sequence Actions:  Don't Care  
+  No. Policy Action:    3
+  policyAction:         TNGA                                           
+   ActionType:          TTLS Group      
+   Action Sequence:     0               
+  policyAction:         TNEA                                           
+   ActionType:          TTLS Environment
+   Action Sequence:     0               
+  policyAction:         TNCA                                           
+   ActionType:          TTLS Connection 
+   Action Sequence:     0               
+  Time Periods:
+   Day of Month Mask:
+   First to Last:       1111111111111111111111111111111
+   Last to First:       1111111111111111111111111111111
+   Month of Yr Mask:    111111111111    
+   Day of Week Mask:    1111111  (Sunday - Saturday)
+   Start Date Time:     None            
+   End Date Time:       None            
+   Fr TimeOfDay:        00:00             To TimeOfDay:      24:00           
+   Fr TimeOfDay UTC:    00:00             To TimeOfDay UTC:  00:00           
+   TimeZone:            Local           
+  TTLS Condition Summary:                 NegativeIndicator: Off
+   Local Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   Remote Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   LocalPortFrom:       4000              LocalPortTo:       4000  
+   RemotePortFrom:      0                 RemotePortTo:      0     
+   JobName:                               UserId:            START1          
+   ServiceDirection:    Both            
+  Policy created: Mon Dec 23 04:52:19 2024
+  Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  TNGA                                           
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Group
+    TTLSEnabled:                On             
+    CtraceClearText:            Off            
+    Trace:                      255
+    FIPS140:                    Off            
+    TTLSGroupAdvancedParms:      
+     SecondaryMap:              Off            
+     SyslogFacility:            Daemon         
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  TNEA                                           
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Environment
+    HandshakeRole:              ServerWithClientAuth
+    Trace:                      255             
+    SuiteBProfile:              Off            
+    TTLSKeyringParms:
+     Keyring:                   start1/TN3270
+    TTLSEnvironmentAdvancedParms:
+     SSLv2:                     Off            
+     SSLv3:                     Off            
+     TLSv1:                     On             
+     TLSv1.1:                   On             
+     TLSv1.2:                   Off            
+     TLSv1.3:                   Off            
+     MiddleBoxCompatMode:       Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          10              
+     ClientAuthType:            Required       
+     ResetCipherTimer:          0               
+     TruncatedHMAC:             Off            
+     CertValidationMode:        Any            
+     ServerMaxSSLFragment:      Off            
+     ClientMaxSSLFragment:      Off            
+     ServerHandshakeSNI:        Off            
+     ClientHandshakeSNI:        Off            
+     ClientExtendedMasterSecret: On             
+     ServerExtendedMasterSecret: On             
+     Renegotiation:             Default         
+     RenegotiationIndicator:    Optional        
+     RenegotiationCertCheck:    Off            
+     3DesKeyCheck:              Off            
+     ClientEDHGroupSize:        Legacy         
+     ServerEDHGroupSize:        Legacy         
+     PeerMinCertVersion:        Any            
+     PeerMinDHKeySize:          1024            
+     PeerMinDsaKeySize:         1024            
+     PeerMinECCKeySize:         192             
+     PeerMinRsaKeySize:         1024            
+     ServerScsv:                Off            
+    TTLSSignatureParms:
+     ClientECurves:              Any            
+     ServerKeyShareGroups:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0029  X25519
+      0030  X448
+     ServerKexECurves:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0021  secp224r1
+      0019  secp192r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSGskAdvancedParms:
+     GSK_V3_SESSION_TIMEOUT:                    86400
+     GSK_V3_SIDCACHE_SIZE:                      512
+     GSK_SESSION_TICKET_CLIENT_ENABLE:          On             
+     GSK_SESSION_TICKET_CLIENT_MAXSIZE:         8192
+     GSK_SESSION_TICKET_SERVER_ENABLE:          On             
+     GSK_SESSION_TICKET_SERVER_ALGORITHM:       AESCBC128
+     GSK_SESSION_TICKET_SERVER_COUNT:           2
+     GSK_SESSION_TICKET_SERVER_KEY_REFRESH:     300
+     GSK_SESSION_TICKET_SERVER_TIMEOUT:         300
+     TTLSGskHttpCdpParms:
+      HttpCdpEnable:            Off            
+      HttpCdpProxyServerPort:   80              
+      HttpCdpResponseTimeout:   15              
+      HttpCdpMaxResponseSize:   204800          
+      HttpCdpCacheSize:         32              
+      HttpCdpCacheEntryMaxsize: 0               
+     TTLSGskOcspParms:
+      OcspAiaEnable:            Off            
+      OcspProxyServerPort:      80              
+      OcspRetrieveViaGet:       Off            
+      OcspUrlPriority:          On             
+      OcspRequestSigalg:
+       0401  TLS_SIGALG_SHA256_WITH_RSA
+      OcspClientCacheSize:      256             
+      OcspCliCacheEntryMaxsize: 0               
+      OcspNonceGenEnable:       Off            
+      OcspNonceCheckEnable:     Off            
+      OcspNonceSize:            8               
+      OcspResponseTimeout:      15              
+      OcspMaxResponseSize:      20480           
+      OcspServerStapling:       Off            
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  TNCA                                           
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Connection
+    CtraceClearText:            Off            
+    Trace:                      255             
+    TTLSConnectionAdvancedParms:
+     SecondaryMap:              Off            
+     SSLv3:                     Off            
+     TLSv1:                     Off            
+     TLSv1.1:                   Off            
+     TLSv1.2:                   On             
+     TLSv1.3:                   Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          3               
+     ServerCertificateLabel:    NISTECCTEST
+    TTLSSignatureParms:
+     ClientECurves:              Any            
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSCipherParms:
+     v3CipherSuites:
+      003D  TLS_RSA_WITH_AES_256_CBC_SHA256
+      C02C  TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+policyRule:             CSSMTPRule                                     
+  Rule Type:            TTLS                                           
+  Version:              3                 Status:            Active          
+  Weight:               1                 ForLoadDist:       False 
+  Priority:             1                 Sequence Actions:  Don't Care  
+  No. Policy Action:    2
+  policyAction:         CSSMTPGroup                                    
+   ActionType:          TTLS Group      
+   Action Sequence:     0               
+  policyAction:         CSSMTPEnvironment                              
+   ActionType:          TTLS Environment
+   Action Sequence:     0               
+  Time Periods:
+   Day of Month Mask:
+   First to Last:       1111111111111111111111111111111
+   Last to First:       1111111111111111111111111111111
+   Month of Yr Mask:    111111111111    
+   Day of Week Mask:    1111111  (Sunday - Saturday)
+   Start Date Time:     None            
+   End Date Time:       None            
+   Fr TimeOfDay:        00:00             To TimeOfDay:      24:00           
+   Fr TimeOfDay UTC:    00:00             To TimeOfDay UTC:  00:00           
+   TimeZone:            Local           
+  TTLS Condition Summary:                 NegativeIndicator: Off
+   Local Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   Remote Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   LocalPortFrom:       0                 LocalPortTo:       0     
+   RemotePortFrom:      25                RemotePortTo:      25    
+   JobName:                               UserId:                            
+   ServiceDirection:    Outbound        
+  Policy created: Mon Dec 23 04:52:19 2024
+  Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  CSSMTPGroup                                    
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Group
+    TTLSEnabled:                On             
+    CtraceClearText:            Off            
+    Trace:                      7
+    FIPS140:                    Off            
+    TTLSGroupAdvancedParms:      
+     SecondaryMap:              Off            
+     SyslogFacility:            Daemon         
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  CSSMTPEnvironment                              
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Environment
+    HandshakeRole:              Client         
+    SuiteBProfile:              Off            
+    TTLSKeyringParms:
+     Keyring:                   START1/TN3270
+    TTLSEnvironmentAdvancedParms:
+     SSLv2:                     Off            
+     SSLv3:                     Off            
+     TLSv1:                     On             
+     TLSv1.1:                   Off            
+     TLSv1.2:                   On             
+     TLSv1.3:                   Off            
+     MiddleBoxCompatMode:       Off            
+     ApplicationControlled:     On             
+     HandshakeTimeout:          10              
+     ClientAuthType:            Required       
+     ResetCipherTimer:          0               
+     TruncatedHMAC:             Off            
+     CertValidationMode:        Any            
+     ServerMaxSSLFragment:      Off            
+     ClientMaxSSLFragment:      Off            
+     ServerHandshakeSNI:        Off            
+     ClientHandshakeSNI:        Off            
+     ClientExtendedMasterSecret: On             
+     ServerExtendedMasterSecret: On             
+     Renegotiation:             Default         
+     RenegotiationIndicator:    Optional        
+     RenegotiationCertCheck:    Off            
+     3DesKeyCheck:              Off            
+     ClientEDHGroupSize:        Legacy         
+     ServerEDHGroupSize:        Legacy         
+     PeerMinCertVersion:        Any            
+     PeerMinDHKeySize:          1024            
+     PeerMinDsaKeySize:         1024            
+     PeerMinECCKeySize:         192             
+     PeerMinRsaKeySize:         1024            
+     ServerScsv:                Off            
+    TTLSSignatureParms:
+     ClientECurves:
+      0021  secp224r1
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0019  secp192r1
+     ClientKeyShareGroups:
+      0023  secp256r1
+     ServerKeyShareGroups:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0029  X25519
+      0030  X448
+     ServerKexECurves:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0021  secp224r1
+      0019  secp192r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSGskAdvancedParms:
+     GSK_V3_SESSION_TIMEOUT:                    86400
+     GSK_V3_SIDCACHE_SIZE:                      512
+     GSK_SESSION_TICKET_CLIENT_ENABLE:          On             
+     GSK_SESSION_TICKET_CLIENT_MAXSIZE:         8192
+     GSK_SESSION_TICKET_SERVER_ENABLE:          On             
+     GSK_SESSION_TICKET_SERVER_ALGORITHM:       AESCBC128
+     GSK_SESSION_TICKET_SERVER_COUNT:           2
+     GSK_SESSION_TICKET_SERVER_KEY_REFRESH:     300
+     GSK_SESSION_TICKET_SERVER_TIMEOUT:         300
+     TTLSGskHttpCdpParms:
+      HttpCdpEnable:            Off            
+      HttpCdpProxyServerPort:   80              
+      HttpCdpResponseTimeout:   15              
+      HttpCdpMaxResponseSize:   204800          
+      HttpCdpCacheSize:         32              
+      HttpCdpCacheEntryMaxsize: 0               
+     TTLSGskOcspParms:
+      OcspAiaEnable:            Off            
+      OcspProxyServerPort:      80              
+      OcspRetrieveViaGet:       Off            
+      OcspUrlPriority:          On             
+      OcspRequestSigalg:
+       0401  TLS_SIGALG_SHA256_WITH_RSA
+      OcspClientCacheSize:      256             
+      OcspCliCacheEntryMaxsize: 0               
+      OcspNonceGenEnable:       Off            
+      OcspNonceCheckEnable:     Off            
+      OcspNonceSize:            8               
+      OcspResponseTimeout:      15              
+      OcspMaxResponseSize:      20480           
+      OcspServerStapling:       Off            
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+policyRule:             DEFAULTRULE12                                  
+  Rule Type:            TTLS                                           
+  Version:              3                 Status:            Active          
+  Weight:               1                 ForLoadDist:       False 
+  Priority:             1                 Sequence Actions:  Don't Care  
+  No. Policy Action:    3
+  policyAction:         DEFAULTTNEA                                    
+   ActionType:          TTLS Environment
+   Action Sequence:     0               
+  policyAction:         DEFAULTTNCA12                                  
+   ActionType:          TTLS Connection 
+   Action Sequence:     0               
+  policyAction:         DEFAULTTNGA                                    
+   ActionType:          TTLS Group      
+   Action Sequence:     0               
+  Time Periods:
+   Day of Month Mask:
+   First to Last:       1111111111111111111111111111111
+   Last to First:       1111111111111111111111111111111
+   Month of Yr Mask:    111111111111    
+   Day of Week Mask:    1111111  (Sunday - Saturday)
+   Start Date Time:     None            
+   End Date Time:       None            
+   Fr TimeOfDay:        00:00             To TimeOfDay:      24:00           
+   Fr TimeOfDay UTC:    00:00             To TimeOfDay UTC:  00:00           
+   TimeZone:            Local           
+  TTLS Condition Summary:                 NegativeIndicator: Off
+   Local Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   Remote Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   LocalPortFrom:       9999              LocalPortTo:       9999  
+   RemotePortFrom:      0                 RemotePortTo:      0     
+   JobName:                               UserId:                            
+   ServiceDirection:    Both            
+  Policy created: Mon Dec 23 04:52:19 2024
+  Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  DEFAULTTNEA                                    
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Environment
+    HandshakeRole:              ServerWithClientAuth
+    SuiteBProfile:              Off            
+    TTLSKeyringParms:
+     Keyring:                   Userid/Keyring
+    TTLSEnvironmentAdvancedParms:
+     SSLv2:                     Off            
+     SSLv3:                     Off            
+     TLSv1:                     On             
+     TLSv1.1:                   On             
+     TLSv1.2:                   Off            
+     TLSv1.3:                   Off            
+     MiddleBoxCompatMode:       Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          10              
+     ClientAuthType:            Required       
+     ResetCipherTimer:          0               
+     TruncatedHMAC:             Off            
+     CertValidationMode:        Any            
+     ServerMaxSSLFragment:      Off            
+     ClientMaxSSLFragment:      Off            
+     ServerHandshakeSNI:        Off            
+     ClientHandshakeSNI:        Off            
+     ClientExtendedMasterSecret: On             
+     ServerExtendedMasterSecret: On             
+     Renegotiation:             Default         
+     RenegotiationIndicator:    Optional        
+     RenegotiationCertCheck:    Off            
+     3DesKeyCheck:              Off            
+     ClientEDHGroupSize:        Legacy         
+     ServerEDHGroupSize:        Legacy         
+     PeerMinCertVersion:        Any            
+     PeerMinDHKeySize:          1024            
+     PeerMinDsaKeySize:         1024            
+     PeerMinECCKeySize:         192             
+     PeerMinRsaKeySize:         1024            
+     ServerScsv:                Off            
+    TTLSSignatureParms:
+     ClientECurves:
+      0021  secp224r1
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0019  secp192r1
+     ClientKeyShareGroups:
+      0023  secp256r1
+     ServerKeyShareGroups:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0029  X25519
+      0030  X448
+     ServerKexECurves:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0021  secp224r1
+      0019  secp192r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSGskAdvancedParms:
+     GSK_V3_SESSION_TIMEOUT:                    86400
+     GSK_V3_SIDCACHE_SIZE:                      512
+     GSK_SESSION_TICKET_CLIENT_ENABLE:          On             
+     GSK_SESSION_TICKET_CLIENT_MAXSIZE:         8192
+     GSK_SESSION_TICKET_SERVER_ENABLE:          On             
+     GSK_SESSION_TICKET_SERVER_ALGORITHM:       AESCBC128
+     GSK_SESSION_TICKET_SERVER_COUNT:           2
+     GSK_SESSION_TICKET_SERVER_KEY_REFRESH:     300
+     GSK_SESSION_TICKET_SERVER_TIMEOUT:         300
+     TTLSGskHttpCdpParms:
+      HttpCdpEnable:            Off            
+      HttpCdpProxyServerPort:   80              
+      HttpCdpResponseTimeout:   15              
+      HttpCdpMaxResponseSize:   204800          
+      HttpCdpCacheSize:         32              
+      HttpCdpCacheEntryMaxsize: 0               
+     TTLSGskOcspParms:
+      OcspAiaEnable:            Off            
+      OcspProxyServerPort:      80              
+      OcspRetrieveViaGet:       Off            
+      OcspUrlPriority:          On             
+      OcspRequestSigalg:
+       0401  TLS_SIGALG_SHA256_WITH_RSA
+      OcspClientCacheSize:      256             
+      OcspCliCacheEntryMaxsize: 0               
+      OcspNonceGenEnable:       Off            
+      OcspNonceCheckEnable:     Off            
+      OcspNonceSize:            8               
+      OcspResponseTimeout:      15              
+      OcspMaxResponseSize:      20480           
+      OcspServerStapling:       Off            
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  DEFAULTTNCA12                                  
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Connection
+    TTLSConnectionAdvancedParms:
+     SSLv3:                     Off            
+     TLSv1:                     Off            
+     TLSv1.1:                   Off            
+     TLSv1.2:                   On             
+     TLSv1.3:                   Off            
+    TTLSSignatureParms:
+     ClientECurves:
+      0021  secp224r1
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0019  secp192r1
+     ClientKeyShareGroups:
+      0023  secp256r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  DEFAULTTNGA                                    
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Group
+    TTLSEnabled:                On             
+    CtraceClearText:            Off            
+    Trace:                      2
+    FIPS140:                    Off            
+    TTLSGroupAdvancedParms:      
+     SecondaryMap:              Off            
+     SyslogFacility:            Daemon         
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+policyRule:             DEFAULTRULE13                                  
+  Rule Type:            TTLS                                           
+  Version:              3                 Status:            Active          
+  Weight:               1                 ForLoadDist:       False 
+  Priority:             1                 Sequence Actions:  Don't Care  
+  No. Policy Action:    3
+  policyAction:         DEFAULTTNEA                                    
+   ActionType:          TTLS Environment
+   Action Sequence:     0               
+  policyAction:         DEFAULTTNCA13                                  
+   ActionType:          TTLS Connection 
+   Action Sequence:     0               
+  policyAction:         DEFAULTTNGA                                    
+   ActionType:          TTLS Group      
+   Action Sequence:     0               
+  Time Periods:
+   Day of Month Mask:
+   First to Last:       1111111111111111111111111111111
+   Last to First:       1111111111111111111111111111111
+   Month of Yr Mask:    111111111111    
+   Day of Week Mask:    1111111  (Sunday - Saturday)
+   Start Date Time:     None            
+   End Date Time:       None            
+   Fr TimeOfDay:        00:00             To TimeOfDay:      24:00           
+   Fr TimeOfDay UTC:    00:00             To TimeOfDay UTC:  00:00           
+   TimeZone:            Local           
+  TTLS Condition Summary:                 NegativeIndicator: Off
+   Local Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   Remote Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   LocalPortFrom:       9999              LocalPortTo:       9999  
+   RemotePortFrom:      0                 RemotePortTo:      0     
+   JobName:                               UserId:                            
+   ServiceDirection:    Both            
+  Policy created: Mon Dec 23 04:52:19 2024
+  Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  DEFAULTTNEA                                    
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Environment
+    HandshakeRole:              ServerWithClientAuth
+    SuiteBProfile:              Off            
+    TTLSKeyringParms:
+     Keyring:                   Userid/Keyring
+    TTLSEnvironmentAdvancedParms:
+     SSLv2:                     Off            
+     SSLv3:                     Off            
+     TLSv1:                     On             
+     TLSv1.1:                   On             
+     TLSv1.2:                   Off            
+     TLSv1.3:                   Off            
+     MiddleBoxCompatMode:       Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          10              
+     ClientAuthType:            Required       
+     ResetCipherTimer:          0               
+     TruncatedHMAC:             Off            
+     CertValidationMode:        Any            
+     ServerMaxSSLFragment:      Off            
+     ClientMaxSSLFragment:      Off            
+     ServerHandshakeSNI:        Off            
+     ClientHandshakeSNI:        Off            
+     ClientExtendedMasterSecret: On             
+     ServerExtendedMasterSecret: On             
+     Renegotiation:             Default         
+     RenegotiationIndicator:    Optional        
+     RenegotiationCertCheck:    Off            
+     3DesKeyCheck:              Off            
+     ClientEDHGroupSize:        Legacy         
+     ServerEDHGroupSize:        Legacy         
+     PeerMinCertVersion:        Any            
+     PeerMinDHKeySize:          1024            
+     PeerMinDsaKeySize:         1024            
+     PeerMinECCKeySize:         192             
+     PeerMinRsaKeySize:         1024            
+     ServerScsv:                Off            
+    TTLSSignatureParms:
+     ClientECurves:
+      0021  secp224r1
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0019  secp192r1
+     ClientKeyShareGroups:
+      0023  secp256r1
+     ServerKeyShareGroups:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0029  X25519
+      0030  X448
+     ServerKexECurves:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0021  secp224r1
+      0019  secp192r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSGskAdvancedParms:
+     GSK_V3_SESSION_TIMEOUT:                    86400
+     GSK_V3_SIDCACHE_SIZE:                      512
+     GSK_SESSION_TICKET_CLIENT_ENABLE:          On             
+     GSK_SESSION_TICKET_CLIENT_MAXSIZE:         8192
+     GSK_SESSION_TICKET_SERVER_ENABLE:          On             
+     GSK_SESSION_TICKET_SERVER_ALGORITHM:       AESCBC128
+     GSK_SESSION_TICKET_SERVER_COUNT:           2
+     GSK_SESSION_TICKET_SERVER_KEY_REFRESH:     300
+     GSK_SESSION_TICKET_SERVER_TIMEOUT:         300
+     TTLSGskHttpCdpParms:
+      HttpCdpEnable:            Off            
+      HttpCdpProxyServerPort:   80              
+      HttpCdpResponseTimeout:   15              
+      HttpCdpMaxResponseSize:   204800          
+      HttpCdpCacheSize:         32              
+      HttpCdpCacheEntryMaxsize: 0               
+     TTLSGskOcspParms:
+      OcspAiaEnable:            Off            
+      OcspProxyServerPort:      80              
+      OcspRetrieveViaGet:       Off            
+      OcspUrlPriority:          On             
+      OcspRequestSigalg:
+       0401  TLS_SIGALG_SHA256_WITH_RSA
+      OcspClientCacheSize:      256             
+      OcspCliCacheEntryMaxsize: 0               
+      OcspNonceGenEnable:       Off            
+      OcspNonceCheckEnable:     Off            
+      OcspNonceSize:            8               
+      OcspResponseTimeout:      15              
+      OcspMaxResponseSize:      20480           
+      OcspServerStapling:       Off            
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  DEFAULTTNCA13                                  
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Connection
+    TTLSConnectionAdvancedParms:
+     SSLv3:                     Off            
+     TLSv1:                     Off            
+     TLSv1.1:                   Off            
+     TLSv1.2:                   On             
+     TLSv1.3:                   On             
+    TTLSSignatureParms:
+     ClientECurves:
+      0021  secp224r1
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0019  secp192r1
+      0029  X25519
+     ClientKeyShareGroups:
+      0023  secp256r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+      0806  TLS_SIGALG_SHA512_WITH_RSASSA_PSS
+      0805  TLS_SIGALG_SHA384_WITH_RSASSA_PSS
+      0804  TLS_SIGALG_SHA256_WITH_RSASSA_PSS
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  DEFAULTTNGA                                    
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Group
+    TTLSEnabled:                On             
+    CtraceClearText:            Off            
+    Trace:                      2
+    FIPS140:                    Off            
+    TTLSGroupAdvancedParms:      
+     SecondaryMap:              Off            
+     SyslogFacility:            Daemon         
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+policyRule:             GPMSERVE                                       
+  Rule Type:            TTLS                                           
+  Version:              3                 Status:            Active          
+  Weight:               1                 ForLoadDist:       False 
+  Priority:             1                 Sequence Actions:  Don't Care  
+  No. Policy Action:    3
+  policyAction:         TNGA                                           
+   ActionType:          TTLS Group      
+   Action Sequence:     0               
+  policyAction:         TNEA                                           
+   ActionType:          TTLS Environment
+   Action Sequence:     0               
+  policyAction:         TNCA                                           
+   ActionType:          TTLS Connection 
+   Action Sequence:     0               
+  Time Periods:
+   Day of Month Mask:
+   First to Last:       1111111111111111111111111111111
+   Last to First:       1111111111111111111111111111111
+   Month of Yr Mask:    111111111111    
+   Day of Week Mask:    1111111  (Sunday - Saturday)
+   Start Date Time:     None            
+   End Date Time:       None            
+   Fr TimeOfDay:        00:00             To TimeOfDay:      24:00           
+   Fr TimeOfDay UTC:    00:00             To TimeOfDay UTC:  00:00           
+   TimeZone:            Local           
+  TTLS Condition Summary:                 NegativeIndicator: Off
+   Local Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   Remote Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   LocalPortFrom:       8803              LocalPortTo:       8803  
+   RemotePortFrom:      0                 RemotePortTo:      0     
+   JobName:                               UserId:                            
+   ServiceDirection:    Both            
+  Policy created: Mon Dec 23 04:52:19 2024
+  Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  TNGA                                           
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Group
+    TTLSEnabled:                On             
+    CtraceClearText:            Off            
+    Trace:                      255
+    FIPS140:                    Off            
+    TTLSGroupAdvancedParms:      
+     SecondaryMap:              Off            
+     SyslogFacility:            Daemon         
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  TNEA                                           
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Environment
+    HandshakeRole:              ServerWithClientAuth
+    Trace:                      255             
+    SuiteBProfile:              Off            
+    TTLSKeyringParms:
+     Keyring:                   start1/TN3270
+    TTLSEnvironmentAdvancedParms:
+     SSLv2:                     Off            
+     SSLv3:                     Off            
+     TLSv1:                     On             
+     TLSv1.1:                   On             
+     TLSv1.2:                   Off            
+     TLSv1.3:                   Off            
+     MiddleBoxCompatMode:       Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          10              
+     ClientAuthType:            Required       
+     ResetCipherTimer:          0               
+     TruncatedHMAC:             Off            
+     CertValidationMode:        Any            
+     ServerMaxSSLFragment:      Off            
+     ClientMaxSSLFragment:      Off            
+     ServerHandshakeSNI:        Off            
+     ClientHandshakeSNI:        Off            
+     ClientExtendedMasterSecret: On             
+     ServerExtendedMasterSecret: On             
+     Renegotiation:             Default         
+     RenegotiationIndicator:    Optional        
+     RenegotiationCertCheck:    Off            
+     3DesKeyCheck:              Off            
+     ClientEDHGroupSize:        Legacy         
+     ServerEDHGroupSize:        Legacy         
+     PeerMinCertVersion:        Any            
+     PeerMinDHKeySize:          1024            
+     PeerMinDsaKeySize:         1024            
+     PeerMinECCKeySize:         192             
+     PeerMinRsaKeySize:         1024            
+     ServerScsv:                Off            
+    TTLSSignatureParms:
+     ClientECurves:              Any            
+     ServerKeyShareGroups:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0029  X25519
+      0030  X448
+     ServerKexECurves:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0021  secp224r1
+      0019  secp192r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSGskAdvancedParms:
+     GSK_V3_SESSION_TIMEOUT:                    86400
+     GSK_V3_SIDCACHE_SIZE:                      512
+     GSK_SESSION_TICKET_CLIENT_ENABLE:          On             
+     GSK_SESSION_TICKET_CLIENT_MAXSIZE:         8192
+     GSK_SESSION_TICKET_SERVER_ENABLE:          On             
+     GSK_SESSION_TICKET_SERVER_ALGORITHM:       AESCBC128
+     GSK_SESSION_TICKET_SERVER_COUNT:           2
+     GSK_SESSION_TICKET_SERVER_KEY_REFRESH:     300
+     GSK_SESSION_TICKET_SERVER_TIMEOUT:         300
+     TTLSGskHttpCdpParms:
+      HttpCdpEnable:            Off            
+      HttpCdpProxyServerPort:   80              
+      HttpCdpResponseTimeout:   15              
+      HttpCdpMaxResponseSize:   204800          
+      HttpCdpCacheSize:         32              
+      HttpCdpCacheEntryMaxsize: 0               
+     TTLSGskOcspParms:
+      OcspAiaEnable:            Off            
+      OcspProxyServerPort:      80              
+      OcspRetrieveViaGet:       Off            
+      OcspUrlPriority:          On             
+      OcspRequestSigalg:
+       0401  TLS_SIGALG_SHA256_WITH_RSA
+      OcspClientCacheSize:      256             
+      OcspCliCacheEntryMaxsize: 0               
+      OcspNonceGenEnable:       Off            
+      OcspNonceCheckEnable:     Off            
+      OcspNonceSize:            8               
+      OcspResponseTimeout:      15              
+      OcspMaxResponseSize:      20480           
+      OcspServerStapling:       Off            
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  TNCA                                           
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Connection
+    CtraceClearText:            Off            
+    Trace:                      255             
+    TTLSConnectionAdvancedParms:
+     SecondaryMap:              Off            
+     SSLv3:                     Off            
+     TLSv1:                     Off            
+     TLSv1.1:                   Off            
+     TLSv1.2:                   On             
+     TLSv1.3:                   Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          3               
+     ServerCertificateLabel:    NISTECCTEST
+    TTLSSignatureParms:
+     ClientECurves:              Any            
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSCipherParms:
+     v3CipherSuites:
+      003D  TLS_RSA_WITH_AES_256_CBC_SHA256
+      C02C  TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+policyRule:             TNZZZZ                                         
+  Rule Type:            TTLS                                           
+  Version:              3                 Status:            Active          
+  Weight:               1                 ForLoadDist:       False 
+  Priority:             1                 Sequence Actions:  Don't Care  
+  No. Policy Action:    3
+  policyAction:         TNGA                                           
+   ActionType:          TTLS Group      
+   Action Sequence:     0               
+  policyAction:         TNEA                                           
+   ActionType:          TTLS Environment
+   Action Sequence:     0               
+  policyAction:         TNCA                                           
+   ActionType:          TTLS Connection 
+   Action Sequence:     0               
+  Time Periods:
+   Day of Month Mask:
+   First to Last:       1111111111111111111111111111111
+   Last to First:       1111111111111111111111111111111
+   Month of Yr Mask:    111111111111    
+   Day of Week Mask:    1111111  (Sunday - Saturday)
+   Start Date Time:     None            
+   End Date Time:       None            
+   Fr TimeOfDay:        00:00             To TimeOfDay:      24:00           
+   Fr TimeOfDay UTC:    00:00             To TimeOfDay UTC:  00:00           
+   TimeZone:            Local           
+  TTLS Condition Summary:                 NegativeIndicator: Off
+   Local Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   Remote Address:
+    FromAddr:           All                                           
+    ToAddr:             All                                           
+   LocalPortFrom:       2023              LocalPortTo:       2023  
+   RemotePortFrom:      0                 RemotePortTo:      0     
+   JobName:             TN3270            UserId:                            
+   ServiceDirection:    Inbound         
+  Policy created: Mon Dec 23 04:52:19 2024
+  Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  TNGA                                           
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Group
+    TTLSEnabled:                On             
+    CtraceClearText:            Off            
+    Trace:                      255
+    FIPS140:                    Off            
+    TTLSGroupAdvancedParms:      
+     SecondaryMap:              Off            
+     SyslogFacility:            Daemon         
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  TNEA                                           
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Environment
+    HandshakeRole:              ServerWithClientAuth
+    Trace:                      255             
+    SuiteBProfile:              Off            
+    TTLSKeyringParms:
+     Keyring:                   start1/TN3270
+    TTLSEnvironmentAdvancedParms:
+     SSLv2:                     Off            
+     SSLv3:                     Off            
+     TLSv1:                     On             
+     TLSv1.1:                   On             
+     TLSv1.2:                   Off            
+     TLSv1.3:                   Off            
+     MiddleBoxCompatMode:       Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          10              
+     ClientAuthType:            Required       
+     ResetCipherTimer:          0               
+     TruncatedHMAC:             Off            
+     CertValidationMode:        Any            
+     ServerMaxSSLFragment:      Off            
+     ClientMaxSSLFragment:      Off            
+     ServerHandshakeSNI:        Off            
+     ClientHandshakeSNI:        Off            
+     ClientExtendedMasterSecret: On             
+     ServerExtendedMasterSecret: On             
+     Renegotiation:             Default         
+     RenegotiationIndicator:    Optional        
+     RenegotiationCertCheck:    Off            
+     3DesKeyCheck:              Off            
+     ClientEDHGroupSize:        Legacy         
+     ServerEDHGroupSize:        Legacy         
+     PeerMinCertVersion:        Any            
+     PeerMinDHKeySize:          1024            
+     PeerMinDsaKeySize:         1024            
+     PeerMinECCKeySize:         192             
+     PeerMinRsaKeySize:         1024            
+     ServerScsv:                Off            
+    TTLSSignatureParms:
+     ClientECurves:              Any            
+     ServerKeyShareGroups:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0029  X25519
+      0030  X448
+     ServerKexECurves:
+      0023  secp256r1
+      0024  secp384r1
+      0025  secp521r1
+      0021  secp224r1
+      0019  secp192r1
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSGskAdvancedParms:
+     GSK_V3_SESSION_TIMEOUT:                    86400
+     GSK_V3_SIDCACHE_SIZE:                      512
+     GSK_SESSION_TICKET_CLIENT_ENABLE:          On             
+     GSK_SESSION_TICKET_CLIENT_MAXSIZE:         8192
+     GSK_SESSION_TICKET_SERVER_ENABLE:          On             
+     GSK_SESSION_TICKET_SERVER_ALGORITHM:       AESCBC128
+     GSK_SESSION_TICKET_SERVER_COUNT:           2
+     GSK_SESSION_TICKET_SERVER_KEY_REFRESH:     300
+     GSK_SESSION_TICKET_SERVER_TIMEOUT:         300
+     TTLSGskHttpCdpParms:
+      HttpCdpEnable:            Off            
+      HttpCdpProxyServerPort:   80              
+      HttpCdpResponseTimeout:   15              
+      HttpCdpMaxResponseSize:   204800          
+      HttpCdpCacheSize:         32              
+      HttpCdpCacheEntryMaxsize: 0               
+     TTLSGskOcspParms:
+      OcspAiaEnable:            Off            
+      OcspProxyServerPort:      80              
+      OcspRetrieveViaGet:       Off            
+      OcspUrlPriority:          On             
+      OcspRequestSigalg:
+       0401  TLS_SIGALG_SHA256_WITH_RSA
+      OcspClientCacheSize:      256             
+      OcspCliCacheEntryMaxsize: 0               
+      OcspNonceGenEnable:       Off            
+      OcspNonceCheckEnable:     Off            
+      OcspNonceSize:            8               
+      OcspResponseTimeout:      15              
+      OcspMaxResponseSize:      20480           
+      OcspServerStapling:       Off            
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024
+
+  TTLS Action:                  TNCA                                           
+    Version:                    3               
+    Status:                     Active  
+    Scope:                      Connection
+    CtraceClearText:            Off            
+    Trace:                      255             
+    TTLSConnectionAdvancedParms:
+     SecondaryMap:              Off            
+     SSLv3:                     Off            
+     TLSv1:                     Off            
+     TLSv1.1:                   Off            
+     TLSv1.2:                   On             
+     TLSv1.3:                   Off            
+     ApplicationControlled:     Off            
+     HandshakeTimeout:          3               
+     ServerCertificateLabel:    NISTECCTEST
+    TTLSSignatureParms:
+     ClientECurves:              Any            
+     SignaturePairs:
+      0601  TLS_SIGALG_SHA512_WITH_RSA
+      0603  TLS_SIGALG_SHA512_WITH_ECDSA
+      0501  TLS_SIGALG_SHA384_WITH_RSA
+      0503  TLS_SIGALG_SHA384_WITH_ECDSA
+      0401  TLS_SIGALG_SHA256_WITH_RSA
+      0403  TLS_SIGALG_SHA256_WITH_ECDSA
+      0402  TLS_SIGALG_SHA256_WITH_DSA
+      0301  TLS_SIGALG_SHA224_WITH_RSA
+      0303  TLS_SIGALG_SHA224_WITH_ECDSA
+      0302  TLS_SIGALG_SHA224_WITH_DSA
+      0201  TLS_SIGALG_SHA1_WITH_RSA
+      0203  TLS_SIGALG_SHA1_WITH_ECDSA
+      0202  TLS_SIGALG_SHA1_WITH_DSA
+    TTLSCipherParms:
+     v3CipherSuites:
+      003D  TLS_RSA_WITH_AES_256_CBC_SHA256
+      C02C  TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+    Policy created: Mon Dec 23 04:52:19 2024
+    Policy updated: Mon Dec 23 04:52:19 2024

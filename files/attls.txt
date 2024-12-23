@@ -1,0 +1,412 @@
+##################AZFClientRule===================
+  TTLSConnectionAction CAZFClientRule
+  {
+   TTLSConnectionAdvancedParms
+   {
+    TLSv1.1 Off
+    TLSv1.2 On
+    TLSv1.3 Off
+    ServerCertificateLabel RSA2048
+    CertificateLabel RSA2048
+   }
+  }
+  TTLSEnvironmentAction EAZFClientRule
+  {
+   HandshakeRole Client
+   TTLSKeyringParms
+   {
+    Keyring start1/TN3270
+   }
+  }
+  TTLSGroupAction GAZFClientRule
+  {
+   TTLSEnabled On
+   Trace 255
+  }
+  TTLSRule AZFClientRule
+  {
+   Priority 255
+   JobName AZF*
+   RemoteAddr 0.0.26.137
+   Direction Outbound
+   TTLSEnvironmentActionRef EAZFClientRule
+   TTLSGroupActionRef GAZFClientRule
+   TTLSConnectionActionRef CAZFClientRule
+  }
+##################AZFMutAuthRule===================
+  TTLSConnectionAction CAZFMutAuthRule
+  {
+   TTLSConnectionAdvancedParms
+   {
+    TLSv1 On
+    TLSv1.1 Off
+    TLSv1.2 On
+    TLSv1.3 Off
+    ServerCertificateLabel RSA2048
+   }
+  }
+  TTLSEnvironmentAction EAZFMutAuthRule
+  {
+   HandshakeRole ServerWithClientAuth
+   TTLSEnvironmentAdvancedParms
+   {
+    HandshakeTimeout 120
+   }
+   TTLSKeyringParms
+   {
+    Keyring start1/TN3270
+   }
+  }
+  TTLSGroupAction GAZFMutAuthRule
+  {
+   TTLSEnabled On
+   Trace 255
+  }
+  TTLSRule AZFMutAuthRule
+  {
+   Priority 255
+   LocalPortRange 6794-6794
+   Direction Inbound
+   TTLSEnvironmentActionRef EAZFMutAuthRule
+   TTLSGroupActionRef GAZFMutAuthRule
+   TTLSConnectionActionRef CAZFMutAuthRule
+  }
+##################AZFSrvAuthRule===================
+  TTLSConnectionAction CAZFSrvAuthRule
+  {
+   TTLSConnectionAdvancedParms
+   {
+    TLSv1.1 Off
+    TLSv1.2 On
+    TLSv1.3 Off
+    ServerCertificateLabel RSA2048
+    CertificateLabel RSA2048
+   }
+  }
+  TTLSEnvironmentAction EAZFSrvAuthRule
+  {
+   HandshakeRole Server
+   TTLSKeyringParms
+   {
+    Keyring start1/TN3270
+   }
+  }
+  TTLSGroupAction GAZFSrvAuthRule
+  {
+   TTLSEnabled On
+   Trace 255
+  }
+  TTLSRule AZFSrvAuthRule
+  {
+   Priority 255
+   LocalPortRange 6793-6793
+   Direction Inbound
+   TTLSEnvironmentActionRef EAZFSrvAuthRule
+   TTLSGroupActionRef GAZFSrvAuthRule
+   TTLSConnectionActionRef CAZFSrvAuthRule
+  }
+##################CPJES2IN===================
+  TTLSConnectionAction CCPJES2IN
+  {
+   TTLSConnectionAdvancedParms
+   {
+    TLSv1.1 Off
+    TLSv1.2 On
+    TLSv1.3 Off
+    ServerCertificateLabel RSA2048
+    CertificateLabel RSA2048
+   }
+  }
+  TTLSEnvironmentAction ECPJES2IN
+  {
+   HandshakeRole Server
+   TTLSKeyringParms
+   {
+    Keyring start1/TN3270
+   }
+  }
+  TTLSGroupAction GCPJES2IN
+  {
+   TTLSEnabled On
+   Trace 255
+  }
+  TTLSRule CPJES2IN
+  {
+   Priority 255
+   LocalPortRange 2252-2252
+   Direction Inbound
+   TTLSEnvironmentActionRef ECPJES2IN
+   TTLSGroupActionRef GCPJES2IN
+   TTLSConnectionActionRef CCPJES2IN
+  }
+##################CPJES2OUT===================
+  TTLSConnectionAction CCPJES2OUT
+  {
+   TTLSConnectionAdvancedParms
+   {
+    TLSv1 On
+    TLSv1.1 Off
+    TLSv1.2 On
+    TLSv1.3 Off
+    ServerCertificateLabel RSA2048
+    CertificateLabel RSA2048
+   }
+  }
+  TTLSEnvironmentAction ECPJES2OUT
+  {
+   HandshakeRole Client
+   TTLSKeyringParms
+   {
+    Keyring start1/TN3270
+   }
+  }
+  TTLSGroupAction GCPJES2OUT
+  {
+   TTLSEnabled On
+   Trace 255
+  }
+  TTLSRule CPJES2OUT
+  {
+   Priority 255
+   RemoteAddr 10.1.0.2
+   RemotePortRange 2175-2175
+   Direction Outbound
+   TTLSEnvironmentActionRef ECPJES2OUT
+   TTLSGroupActionRef GCPJES2OUT
+   TTLSConnectionActionRef CCPJES2OUT
+  }
+##################COLATTLJ===================
+  TTLSConnectionAction CCOLATTLJ
+  {
+   TTLSCipherParms
+   {
+    V3CipherSuites TLS_RSA_WITH_AES_256_CBC_SHA256
+    V3CipherSuites TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+   }
+   TTLSConnectionAdvancedParms
+   {
+    TLSv1.1 Off
+    TLSv1.2 On
+    TLSv1.3 Off
+    ServerCertificateLabel NISTECCTEST
+   }
+   TTLSSignatureParms
+   {
+    ClientECurves Any
+   }
+  }
+  TTLSEnvironmentAction ECOLATTLJ
+  {
+   HandshakeRole ServerWithClientAuth
+   TTLSEnvironmentAdvancedParms
+   {
+    HandshakeTimeout 3
+   }
+   TTLSKeyringParms
+   {
+    Keyring start1/TN3270
+   }
+  }
+  TTLSGroupAction GCOLATTLJ
+  {
+   TTLSEnabled On
+   Trace 255
+  }
+  TTLSRule COLATTLJ
+  {
+   JobName COLCOMPI
+   RemoteAddr 10.1.1.2
+   LocalPortRange 4000-4000
+   Direction Both
+   UserId COLIN
+   TTLSEnvironmentActionRef ECOLATTLJ
+   TTLSGroupActionRef GCOLATTLJ
+   TTLSConnectionActionRef CCOLATTLJ
+  }
+##################COLATTLS===================
+  TTLSConnectionAction CCOLATTLS
+  {
+   TTLSCipherParms
+   {
+    V3CipherSuites TLS_RSA_WITH_AES_256_CBC_SHA256
+    V3CipherSuites TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+   }
+   TTLSConnectionAdvancedParms
+   {
+    TLSv1.1 Off
+    TLSv1.2 On
+    TLSv1.3 Off
+    ServerCertificateLabel NISTECCTEST
+   }
+   TTLSSignatureParms
+   {
+    ClientECurves Any
+   }
+  }
+  TTLSEnvironmentAction ECOLATTLS
+  {
+   HandshakeRole ServerWithClientAuth
+   TTLSEnvironmentAdvancedParms
+   {
+    HandshakeTimeout 3
+   }
+   TTLSKeyringParms
+   {
+    Keyring start1/TN3270
+   }
+  }
+  TTLSGroupAction GCOLATTLS
+  {
+   TTLSEnabled On
+   Trace 255
+  }
+  TTLSRule COLATTLS
+  {
+   LocalPortRange 4000-4000
+   Direction Both
+   UserId START1
+   TTLSEnvironmentActionRef ECOLATTLS
+   TTLSGroupActionRef GCOLATTLS
+   TTLSConnectionActionRef CCOLATTLS
+  }
+##################CSSMTPRule===================
+  TTLSConnectionAction CCSSMTPRule
+  {
+   TTLSConnectionAdvancedParms
+   {
+    TLSv1 On
+    TLSv1.1 Off
+    TLSv1.2 On
+    TLSv1.3 Off
+   }
+  }
+  TTLSEnvironmentAction ECSSMTPRule
+  {
+   HandshakeRole Client
+   TTLSEnvironmentAdvancedParms
+   {
+    ApplicationControlled On
+   }
+   TTLSKeyringParms
+   {
+    Keyring START1/TN3270
+   }
+  }
+  TTLSGroupAction GCSSMTPRule
+  {
+   TTLSEnabled On
+   Trace 7
+  }
+  TTLSRule CSSMTPRule
+  {
+   RemotePortRange 25-25
+   Direction Outbound
+   TTLSEnvironmentActionRef ECSSMTPRule
+   TTLSGroupActionRef GCSSMTPRule
+   TTLSConnectionActionRef CCSSMTPRule
+  }
+##################DEFAULTRULE12===================
+  TTLSConnectionAction CDEFAULTRULE12
+  {
+   TTLSConnectionAdvancedParms
+   {
+    TLSv1.1 Off
+    TLSv1.2 On
+    TLSv1.3 Off
+   }
+  }
+  TTLSEnvironmentAction EDEFAULTRULE12
+  {
+   HandshakeRole ServerWithClientAuth
+   TTLSKeyringParms
+   {
+    Keyring Userid/Keyring
+   }
+  }
+  TTLSGroupAction GDEFAULTRULE12
+  {
+   TTLSEnabled On
+  }
+  TTLSRule DEFAULTRULE12
+  {
+   LocalPortRange 9999-9999
+   Direction Both
+   TTLSEnvironmentActionRef EDEFAULTRULE12
+   TTLSGroupActionRef GDEFAULTRULE12
+   TTLSConnectionActionRef CDEFAULTRULE12
+  }
+##################DEFAULTRULE13===================
+  TTLSConnectionAction CDEFAULTRULE13
+  {
+   TTLSConnectionAdvancedParms
+   {
+    TLSv1.1 Off
+    TLSv1.2 On
+    TLSv1.3 On
+   }
+  }
+  TTLSEnvironmentAction EDEFAULTRULE13
+  {
+   HandshakeRole ServerWithClientAuth
+   TTLSKeyringParms
+   {
+    Keyring Userid/Keyring
+   }
+  }
+  TTLSGroupAction GDEFAULTRULE13
+  {
+   TTLSEnabled On
+  }
+  TTLSRule DEFAULTRULE13
+  {
+   LocalPortRange 9999-9999
+   Direction Both
+   TTLSEnvironmentActionRef EDEFAULTRULE13
+   TTLSGroupActionRef GDEFAULTRULE13
+   TTLSConnectionActionRef CDEFAULTRULE13
+  }
+##################GPMSERVE===================
+  TTLSConnectionAction CGPMSERVE
+  {
+   TTLSCipherParms
+   {
+    V3CipherSuites TLS_RSA_WITH_AES_256_CBC_SHA256
+    V3CipherSuites TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+   }
+   TTLSConnectionAdvancedParms
+   {
+    TLSv1.1 Off
+    TLSv1.2 On
+    TLSv1.3 Off
+    ServerCertificateLabel NISTECCTEST
+   }
+   TTLSSignatureParms
+   {
+    ClientECurves Any
+   }
+  }
+  TTLSEnvironmentAction EGPMSERVE
+  {
+   HandshakeRole ServerWithClientAuth
+   TTLSEnvironmentAdvancedParms
+   {
+    HandshakeTimeout 3
+   }
+   TTLSKeyringParms
+   {
+    Keyring start1/TN3270
+   }
+  }
+  TTLSGroupAction GGPMSERVE
+  {
+   TTLSEnabled On
+   Trace 255
+  }
+  TTLSRule GPMSERVE
+  {
+   LocalPortRange 8803-8803
+   Direction Both
+   TTLSEnvironmentActionRef EGPMSERVE
+   TTLSGroupActionRef GGPMSERVE
+   TTLSConnectionActionRef CGPMSERVE
+  }

@@ -1,0 +1,154 @@
+# This is used to parse the pasearch output  
+# This provides the defaults values for AT-TLS, so if a data element matches this - it can
+# be omitted
+# 
+#TTLSRule:
+policyRule : defaultrule12
+Rule Type : TTLS
+Version : 3
+Weight : 1
+Priority : 1   
+# No. Policy Action : 3
+# policyAction : DEFAULTTNGA
+# ActionType : 'TTLS Group'
+Direction: 
+Action Sequence : 0
+#First to Last : 1111111111111111111111111111111
+#Last to First : 1111111111111111111111111111111
+DayOfMonthMask : 1111111111111111111111111111111
+#Month of Yr Mask : 111111111111
+MonthOfYearMask : 111111111111
+#Day of Week Mask : 1111111
+DayOfWeekMask : 1111111
+TimeofDayRange : 1111111111111111111111111111111
+IpTimeCondition: 
+  DayOfMonthMask : '1111111111111111111111111111111'
+  MonthOfYearMask : '111111111111'
+  DayOfWeekMask : '1111111'
+  TimeofDayRange :  '00:00-24:00'
+#Start Date Time : None
+#End Date Time : None
+#FromTod : 00:00
+#ToTOD : 24:00
+#FromTodUTC : 00:00
+#ToTODUTC : 00:00
+#TimeZone : Local
+#FromAddr : All
+#ToAddr : All
+RemoteAddr : All
+LocalAddr : All
+LocalPortRange : 9999
+#LocalPortTo : 9999
+RemotePortRange : 0
+JobName : 
+UserId : 
+ServiceDirection : Both
+#TTLS Action : DEFAULTTNGA
+Status : Active
+Scope : Group
+HandshakeRole : 
+SuiteBProfile : Off
+Keyring : Off
+SSLv2 : Off
+SSLv3 : Off
+TLSv1 : Off
+TLSv1.1 : 
+TLSv1.2 : 
+TLSv1.3 : 
+MiddleBoxCompatMode : Off
+ApplicationControlled : Off
+HandshakeTimeout : 10
+ClientKeyShareGroups : ['0023  secp256r1']
+ClientAuthType : Required
+ResetCipherTimer : 0
+TruncatedHMAC : Off
+CertValidationMode : Any
+ServerMaxSSLFragment : Off
+ClientMaxSSLFragment : Off
+ServerHandshakeSNI : Off
+ClientHandshakeSNI : Off
+ClientExtendedMasterSecret : On
+ServerExtendedMasterSecret : On
+Renegotiation : Default
+RenegotiationIndicator : Optional
+RenegotiationCertCheck : Off
+3DesKeyCheck : Off
+ClientEDHGroupSize : Legacy
+ServerEDHGroupSize : Legacy
+ServerCertificateLabel :
+CertificateLabel :
+PeerMinCertVersion : Any
+PeerMinDHKeySize : 1024
+PeerMinDsaKeySize : 1024
+PeerMinECCKeySize : 192
+PeerMinRsaKeySize : 1024
+ServerScsv : Off
+#ServerKexECurves: "00230024002500210019"
+ServerKexECurves :  ["0023  secp256r1", "0024  secp384r1", "0025  secp521r1", 
+                     "0021  secp224r1", "0019  secp192r1"]
+ClientECurves   : ['0021  secp224r1', '0023  secp256r1', '0024  secp384r1', '0025  secp521r1', '0019  secp192r1']
+OcspRequestSigalg : [0401  TLS_SIGALG_SHA256_WITH_RSA]
+ServerKeyShareGroups : [
+   0023  secp256r1,
+   0024  secp384r1,
+   0025  secp521r1,
+   0029  X25519,
+   0030  X448,
+   ]
+SignaturePairs : [
+   0601  TLS_SIGALG_SHA512_WITH_RSA,
+   0603  TLS_SIGALG_SHA512_WITH_ECDSA,
+   0501  TLS_SIGALG_SHA384_WITH_RSA,
+   0503  TLS_SIGALG_SHA384_WITH_ECDSA,
+   0401  TLS_SIGALG_SHA256_WITH_RSA,
+   0403  TLS_SIGALG_SHA256_WITH_ECDSA,
+   0402  TLS_SIGALG_SHA256_WITH_DSA,
+   0301  TLS_SIGALG_SHA224_WITH_RSA,
+   0303  TLS_SIGALG_SHA224_WITH_ECDSA,
+   0302  TLS_SIGALG_SHA224_WITH_DSA,
+   0201  TLS_SIGALG_SHA1_WITH_RSA,
+   0203  TLS_SIGALG_SHA1_WITH_ECDSA,
+   0202  TLS_SIGALG_SHA1_WITH_DSA,
+   ]
+GSK_V3_SESSION_TIMEOUT : 86400
+GSK_V3_SIDCACHE_SIZE : 512
+GSK_SESSION_TICKET_CLIENT_ENABLE : On
+GSK_SESSION_TICKET_CLIENT_MAXSIZE : 8192
+GSK_SESSION_TICKET_SERVER_ENABLE : On
+GSK_SESSION_TICKET_SERVER_ALGORITHM : AESCBC128
+GSK_SESSION_TICKET_SERVER_COUNT : 2
+GSK_SESSION_TICKET_SERVER_KEY_REFRESH : 300
+GSK_SESSION_TICKET_SERVER_TIMEOUT : 300
+HttpCdpEnable : Off
+HttpCdpProxyServerPort : 80
+HttpCdpResponseTimeout : 15
+HttpCdpMaxResponseSize : 204800
+HttpCdpCacheSize : 32
+HttpCdpCacheEntryMaxsize : 0
+OcspAiaEnable : Off
+OcspProxyServerPort : 80
+OcspRetrieveViaGet : Off
+OcspUrlPriority : On
+OcspClientCacheSize : 256
+OcspCliCacheEntryMaxsize : 0
+OcspNonceGenEnable : Off
+OcspNonceCheckEnable : Off
+OcspNonceSize : 8
+OcspResponseTimeout : 15
+OcspMaxResponseSize : 20480
+OcspServerStapling : Off
+TTLSEnabled : None
+CtraceClearText : Off
+Trace : 2
+FIPS140 : Off
+SecondaryMap : Off
+SyslogFacility : Daemon
+V3CipherSuites : [
+   C023  TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, 
+   C024  TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, 
+   C027  TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, 
+   C028  TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, 
+   C02B  TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, 
+   C02C  TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, 
+   C02F  TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+]

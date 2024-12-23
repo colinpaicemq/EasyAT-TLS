@@ -1,0 +1,72 @@
+# This is the structure of the AT-TLS defininition.  The generate code goes down this list and
+# creates the definiions using this list to look up into the definitions
+TTLSConnectionAction:
+  Scope: Connection
+  #Status: Active
+  TTLSCipherParms : {V3CipherSuites: None}
+  TTLSConnectionAdvancedParms : {SSLv2: , SSLv3: , TLSv1: , TLSv1.1: , TLSv1.2: ,
+    TLSv1.3: , ServerCertificateLabel: Off, CertificateLabel: Off}
+  TTLSSignatureParms: {ClientECurves: null, ClientKeyShareGroups: 0023  secp256r1,
+    SignaturePairs: null}
+  Version: 3
+TTLSEnvironmentAction:
+  HandshakeRole: ServerWithClientAuth
+  #Scope: Environment
+  #Status: Active
+  SuiteBProfile: Off
+  TTLSEnvironmentAdvancedParms : {3DesKeyCheck: Off, ApplicationControlled: Off, CertValidationMode: Any,
+    ClientAuthType: Required, ClientEDHGroupSize: Legacy, ClientExtendedMasterSecret: On,
+    ClientHandshakeSNI: Off, ClientMaxSSLFragment: Off, HandshakeTimeout: 10, MiddleBoxCompatMode: Off,
+    PeerMinCertVersion: Any, PeerMinDHKeySize: 1024, PeerMinDsaKeySize: 1024, PeerMinECCKeySize: 192,
+    PeerMinRsaKeySize: 1024, Renegotiation: Default, RenegotiationCertCheck: Off,
+    RenegotiationIndicator: Optional, ResetCipherTimer: 0,
+    ServerEDHGroupSize: Legacy, ServerExtendedMasterSecret: On, ServerHandshakeSNI: Off,
+    ServerMaxSSLFragment: Off, ServerScsv: Off,   SSLv2: , SSLv3: , TLSv1: , TLSv1.1: , TLSv1.2: , TLSv1.3: ,
+     TruncatedHMAC: Off}
+  TTLSGskAdvancedParms:
+    GSK_SESSION_TICKET_CLIENT_ENABLE: On
+    GSK_SESSION_TICKET_CLIENT_MAXSIZE: 8192
+    GSK_SESSION_TICKET_SERVER_ALGORITHM: AESCBC128
+    GSK_SESSION_TICKET_SERVER_COUNT: 2
+    GSK_SESSION_TICKET_SERVER_ENABLE: On
+    GSK_SESSION_TICKET_SERVER_KEY_REFRESH: 300
+    GSK_SESSION_TICKET_SERVER_TIMEOUT: 300
+    GSK_V3_SESSION_TIMEOUT: 86400
+    GSK_V3_SIDCACHE_SIZE: 512
+    TTLSGskHttpCdpParms: {HttpCdpCacheEntryMaxsize: 0, HttpCdpCacheSize: 32, HttpCdpEnable: Off,
+      HttpCdpMaxResponseSize: 204800, HttpCdpProxyServerPort: 80, HttpCdpResponseTimeout: 15}
+    TTLSGskOcspParms: {OcspAiaEnable: Off, OcspCliCacheEntryMaxsize: 0, OcspClientCacheSize: 256,
+      OcspMaxResponseSize: 20480, OcspNonceCheckEnable: Off, OcspNonceGenEnable: Off,
+      OcspNonceSize: 8, OcspProxyServerPort: 80, OcspRequestSigalg: 0401  TLS_SIGALG_SHA256_WITH_RSA,
+      OcspResponseTimeout: 15, OcspRetrieveViaGet: Off, OcspServerStapling: Off, OcspUrlPriority: On}
+  TTLSKeyringParms: {Keyring: Userid/Keyring}
+  TTLSSignatureParms: {ClientECurves: null, ClientKeyShareGroups: 0023  secp256r1,
+    ServerKexECurves: null, ServerKeyShareGroups: null, SignaturePairs: null}
+  Version: 3
+TTLSGroupAction:
+  CtraceClearText: Off
+  FIPS140: Off
+  #Scope: Group
+  #Status: Active
+  TTLSEnabled: On
+  TTLSGroupAdvancedParms: {SecondaryMap: Off, SyslogFacility: Daemon}
+  Trace: 2
+  #Version: 3
+TTLSRule:
+  Priority: 1
+  Rule Type: TTLS
+  JobName: null
+  LocalAddr: None
+  RemoteAddr: None
+  LocalPortRange: 9999
+  RemotePortRange: 99
+  Month of Yr Mask: 111111111111
+  Remote Address: {FromAddr: All, ToAddr: All}
+  RemotePortFrom: 0
+  Direction: Both
+  UserId: null
+  IpTimeCondition :
+  #Version: 3
+  TTLSConnectionActionRef: None
+  TTLSGroupActionRef: None
+  TTLSEnvironmentActionRef: None
